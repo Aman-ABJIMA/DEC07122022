@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 namespace ArrayProgram
 {
     class A
@@ -7,18 +8,24 @@ namespace ArrayProgram
         {
             Console.WriteLine("Enter Your Name:");
             string a = Console.ReadLine();
-       
-           string str=null;
-     
-            for(int i=0; i<a.Length;i++)
+            //  Console.WriteLine("Enter Length of Array:");
+            //  int size = Convert.ToInt16(Console.ReadLine());
+            //   char[] a = new char[size];
+            string str = null;
+            // Console.WriteLine("Enter {0} elements into an array:",size);
+            //  for(int i=0; i<size; i++)
+            //  {
+            //     a[i]=Convert.ToChar(Console.ReadLine());
+            //  }
+            string vl = "";
+            for (int i = 0; i < a.Length; i++)
             {
-                for(int j=0;j<=i;j++)
+                for (int j = i + 1; j <= a.Length; j++)
                 {
-                    str = str + a[j];
+                    vl = (vl + a.Substring(i, j - i)) + " ,";
                 }
-                str = str + ",";
             }
-            Console.WriteLine("\n"+str+"\b ");
+            Console.Write(vl);
 
         }
     }
